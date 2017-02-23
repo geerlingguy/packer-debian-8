@@ -27,7 +27,7 @@
       "boot_command": [
         "<esc><wait>",
         "install <wait>",
-        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{user `preseed_path`}} <wait>",
+        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
         "debian-installer=en_US.UTF-8 <wait>",
         "auto <wait>",
         "locale=en_US.UTF-8 <wait>",
@@ -42,7 +42,7 @@
         "grub-installer/bootdev=/dev/sda <wait>",
         "<enter><wait>"
       ],
-      "boot_wait": "10s",
+      "boot_wait": "5s",
       "disk_size": 81920,
       "guest_os_type": "Debian_64",
       "headless": true,
@@ -81,7 +81,7 @@
       "boot_command": [
         "<esc><wait>",
         "install <wait>",
-        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{user `preseed_path`}} <wait>",
+        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
         "debian-installer=en_US.UTF-8 <wait>",
         "auto <wait>",
         "locale=en_US.UTF-8 <wait>",
@@ -96,7 +96,7 @@
         "grub-installer/bootdev=/dev/sda <wait>",
         "<enter><wait>"
       ],
-      "boot_wait": "10s",
+      "boot_wait": "5s",
       "disk_size": 81920,
       "guest_os_type": "debian8-64",
       "headless": true,
