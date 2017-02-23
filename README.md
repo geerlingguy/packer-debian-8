@@ -1,13 +1,13 @@
-# Packer Example - Ubuntu 16.04 minimal Vagrant Box
+# Packer Example - Debian 8 minimal Vagrant Box
 
-**Current Ubuntu Version Used**: 16.04.1
+**Current Debian Version Used**: 8.7.1
 
 **Pre-built Vagrant Box**:
 
-  - [`vagrant init geerlingguy/ubuntu1604`](https://vagrantcloud.com/geerlingguy/boxes/ubuntu1604)
+  - [`vagrant init geerlingguy/debian8`](https://vagrantcloud.com/geerlingguy/boxes/debian8)
   - See older versions: http://files.midwesternmac.com/
 
-This example build configuration installs and configures Ubuntu 16.04 x86_64 minimal using Ansible, and then generates two Vagrant box files, for:
+This example build configuration installs and configures Debian 8 amd64 minimal using Ansible, and then generates two Vagrant box files, for:
 
   - VirtualBox
   - VMware
@@ -28,13 +28,13 @@ The following software must be installed/present on your local machine before yo
 
 Make sure all the required software (listed above) is installed, then cd to the directory containing this README.md file, and run:
 
-    $ packer build ubuntu1604.json
+    $ packer build debian8.json
 
 After a few minutes, Packer should tell you the box was generated successfully.
 
 If you want to only build a box for one of the supported virtualization platforms (e.g. only build the VMware box), add `--only=vmware-iso` to the `packer build` command:
 
-    $ packer build --only=vmware-iso ubuntu1604.json
+    $ packer build --only=vmware-iso debian8.json
 
 ## Testing built boxes
 
@@ -52,4 +52,4 @@ MIT license.
 
 ## Author Information
 
-Created in 2016 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
+Created in 2017 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
