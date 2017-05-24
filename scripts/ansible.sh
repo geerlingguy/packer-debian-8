@@ -8,4 +8,4 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 
 # Install Ansible.
 apt -y update
-apt -y install ansible
+apt -y install ansible git

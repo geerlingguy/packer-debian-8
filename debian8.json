@@ -1,4 +1,8 @@
 {
+
+  "variables": {
+    "vmware_install_open_vm_tools": "false"
+  },
   "provisioners": [
     {
       "type": "shell",
@@ -8,7 +12,13 @@
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/setup.sh"
+      "script": "scripts/reboot.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "script": "scripts/setup.sh",
+      "pause_before": "20s"
     },
     {
       "type": "ansible-local",
@@ -48,11 +58,11 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "iso/debian-8.7.1-amd64-CD-1.iso",
-        "http://cdimage.debian.org/cdimage/release/8.7.1/amd64/iso-cd/debian-8.7.1-amd64-CD-1.iso"
+        "iso/debian-8.8.0-amd64-CD-1.iso",
+        "https://cdimage.debian.org/debian-cd/8.8.0/amd64/iso-cd/debian-8.8.0-amd64-CD-1.iso"
       ],
       "iso_checksum_type": "sha256",
-      "iso_checksum": "065c90fa72ed51b7ce06ecfdc660b083e7b0c40bbf63fd58559c8bf7df7752da",
+      "iso_checksum": "673079527fdf3a91e8bfc9e0312f94316820ca795bb6a1b2af1e8461eb78179c",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -99,14 +109,14 @@
       "boot_wait": "5s",
       "disk_size": 81920,
       "guest_os_type": "debian8-64",
-      "headless": true,
+      "headless": false,
       "http_directory": "http",
-      "iso_urls": [
-        "iso/debian-8.7.1-amd64-CD-1.iso",
-        "http://cdimage.debian.org/cdimage/release/8.7.1/amd64/iso-cd/debian-8.7.1-amd64-CD-1.iso"
+            "iso_urls": [
+        "iso/debian-8.8.0-amd64-CD-1.iso",
+        "https://cdimage.debian.org/debian-cd/8.8.0/amd64/iso-cd/debian-8.8.0-amd64-CD-1.iso"
       ],
       "iso_checksum_type": "sha256",
-      "iso_checksum": "065c90fa72ed51b7ce06ecfdc660b083e7b0c40bbf63fd58559c8bf7df7752da",
+      "iso_checksum": "673079527fdf3a91e8bfc9e0312f94316820ca795bb6a1b2af1e8461eb78179c",
       "output_directory": "packer-debian-8-amd64-vmware",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "ssh_password": "vagrant",
