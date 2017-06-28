@@ -4,7 +4,7 @@
 
 **Pre-built Vagrant Box**:
 
-  - [`vagrant init geerlingguy/debian8`](https://vagrantcloud.com/geerlingguy/boxes/debian8)
+  - [`vagrant init geerlingguy/debian8`](https://app.vagrantup.com/geerlingguy/boxes/debian8)
   - See older versions: http://files.midwesternmac.com/
 
 This example build configuration installs and configures Debian 8 amd64 minimal using Ansible, and then generates two Vagrant box files, for:
