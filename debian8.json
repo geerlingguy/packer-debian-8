@@ -23,7 +23,8 @@
     {
       "type": "ansible-local",
       "playbook_file": "ansible/main.yml",
-      "galaxy_file": "requirements.yml"
+      "galaxy_file": "requirements.yml",
+      "extra_arguments": ["--extra-vars \"vmware_install_open_vm_tools={{user `vmware_install_open_vm_tools`}}\""]
     },
     {
       "type": "shell",
@@ -111,7 +112,7 @@
       "guest_os_type": "debian8-64",
       "headless": false,
       "http_directory": "http",
-            "iso_urls": [
+      "iso_urls": [
         "iso/debian-8.8.0-amd64-CD-1.iso",
         "https://cdimage.debian.org/debian-cd/8.8.0/amd64/iso-cd/debian-8.8.0-amd64-CD-1.iso"
       ],
