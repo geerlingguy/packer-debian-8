@@ -1,8 +1,10 @@
 #!/bin/bash -eux
 
-# Uninstall Ansible and related tools.
-pip uninstall -y ansible
-apt -y remove --purge python-pip python-dev python-setuptools libssl-dev libffi-dev
+# Uninstall Ansible and dependencies.
+pip uninstall ansible
+/usr/bin/easy_install-2.7 -m pip
+# TODO: Uninstall pip .egg file.
+apt-get remove python-setuptools python-dev libssl-dev libffi-dev
 
 # Apt cleanup.
 apt autoremove
